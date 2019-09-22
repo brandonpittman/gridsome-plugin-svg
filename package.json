@@ -1,0 +1,23 @@
+{
+  "name": "gridsome-plugin-svg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonpittman/gridsome-plugin-svg.git"
+  },
+  "keywords": [],
+  "author": "Brandon Pittman <npm@brandonpittman.net> (https://brandonpittman.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brandonpittman/gridsome-plugin-svg/issues"
+  },
+  "homepage": "https://github.com/brandonpittman/gridsome-plugin-svg#readme",
+  "dependencies": {
+    "vue-svg-loader": "^0.12.0"
+  }
+}

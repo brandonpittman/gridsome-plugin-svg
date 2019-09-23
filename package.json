@@ -7,7 +7,12 @@
     "type": "git",
     "url": "git+https://github.com/brandonpittman/gridsome-plugin-svg.git"
   },
-  "keywords": [],
+	"keywords": [
+		"gridsome",
+		"gridsome-plugin",
+    "svg",
+    "svgo"
+	],
   "author": "Brandon Pittman <npm@brandonpittman.net> (https://brandonpittman.net)",
   "license": "MIT",
   "bugs": {

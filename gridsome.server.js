@@ -1,3 +1,5 @@
+const {basename} = require('path');
+
 class GridsomeSVG {
   static defaultOptions() {
     return {

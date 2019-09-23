@@ -1,18 +1,18 @@
 {
   "name": "gridsome-plugin-svg",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "main": "gridsome.server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonpittman/gridsome-plugin-svg.git"
   },
-	"keywords": [
-		"gridsome",
-		"gridsome-plugin",
+  "keywords": [
+    "gridsome",
+    "gridsome-plugin",
     "svg",
     "svgo"
-	],
+  ],
   "author": "Brandon Pittman <npm@brandonpittman.net> (https://brandonpittman.net)",
   "license": "MIT",
   "bugs": {

@@ -3,28 +3,37 @@ const {basename} = require('path');
 class GridsomeSVG {
   static defaultOptions() {
     return {
-      doubleDuty: false,
+      goesBothWays: false,
       svgo: {
         plugins: [
+          {
+            removeTitle: false
+          },
           {
             prefixIds: {
               prefix: (_, {path}) => basename(path, '.svg'),
               delim: '-',
             },
-            removeViewBox: false,
-            removeTitle: false,
-            sortAttrs: true,
           },
+          {
+            removeDesc: false
+          },
+          {
+            removeViewBox: false,
+          },
+          {
+            sortAttrs: true,
+          }
         ],
       }
     }
   }
 
-  constructor(api, options) {
+  constructor(api, {goesBothWays, svgo}) {
     api.chainWebpack(config => {
       const svgRule = config.module.rule('svg')
       svgRule.uses.clear()
-      if (options.doubleDuty) {
+      if (goesBothWays) {
         svgRule
           .oneOf('inline')
           .resourceQuery(/inline/)
@@ -37,14 +46,14 @@ class GridsomeSVG {
           .loader('file-loader')
           .options({
             name: 'assets/[name].[hash:8].[ext]',
-            svgo: options.svgo
+            svgo
           });
       } else {
         svgRule
           .use('vue-svg-loader')
           .loader('vue-svg-loader')
           .options({
-            svgo: options.svgo,
+            svgo
           });
       }
     })
@@ -52,4 +61,3 @@ class GridsomeSVG {
 }
 
 module.exports = GridsomeSVG
-

@@ -1,31 +1,30 @@
 const {basename} = require('path');
+const defaultPlugins = [
+  {
+    removeTitle: false
+  },
+  {
+    prefixIds: {
+      prefix: (_, {path}) => basename(path, '.svg'),
+      delim: '-',
+    },
+  },
+  {
+    removeDesc: false
+  },
+  {
+    removeViewBox: false,
+  },
+  {
+    sortAttrs: true,
+  },
+]
 
 class GridsomeSVG {
   static defaultOptions() {
     return {
       goesBothWays: false,
-      svgo: {
-        plugins: [
-          {
-            removeTitle: false
-          },
-          {
-            prefixIds: {
-              prefix: (_, {path}) => basename(path, '.svg'),
-              delim: '-',
-            },
-          },
-          {
-            removeDesc: false
-          },
-          {
-            removeViewBox: false,
-          },
-          {
-            sortAttrs: true,
-          }
-        ],
-      }
+      svgo: [],
     }
   }
 
@@ -46,14 +45,24 @@ class GridsomeSVG {
           .loader('file-loader')
           .options({
             name: 'assets/[name].[hash:8].[ext]',
-            svgo
+            svgo: {
+              plugins: [
+                ...defaultPlugins,
+                ...svgo
+              ]
+            }
           });
       } else {
         svgRule
           .use('vue-svg-loader')
           .loader('vue-svg-loader')
           .options({
-            svgo
+            svgo: {
+              plugins: [
+                ...defaultPlugins,
+                ...svgo
+              ]
+            }
           });
       }
     })
@@ -61,3 +70,4 @@ class GridsomeSVG {
 }
 
 module.exports = GridsomeSVG
+

@@ -46,3 +46,5 @@ You can use any plugin from [SVGO](https://github.com/svg/svgo#what-it-can-do). 
 import Foo as '@/assets/svg/foo.svg?inline' // will be inlined
 import Bar as '@/assets/svg/bar.svg' // will return path to SVG
 ```
+
+<a href="https://www.buymeacoffee.com/blp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>

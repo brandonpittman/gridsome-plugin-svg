@@ -38,7 +38,14 @@ class GridsomeSVG {
           .resourceQuery(/inline/)
           .use('vue-svg-loader')
           .loader('vue-svg-loader')
-          .end()
+          .options({
+            svgo: {
+              plugins: [
+                ...defaultPlugins,
+                ...svgo
+              ]
+            }
+          })
           .end()
           .oneOf('external')
           .use('file-loader')

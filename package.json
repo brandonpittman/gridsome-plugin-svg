@@ -1,6 +1,6 @@
 {
   "name": "gridsome-plugin-svg",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "main": "gridsome.server.js",
   "repository": {

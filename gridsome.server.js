@@ -53,12 +53,12 @@ class GridsomeSVG {
           .loader('file-loader')
           .options({
             name: 'assets/[name].[hash:8].[ext]',
-            // svgo: {
-            //   plugins: [
-            //     ...defaultPlugins,
-            //     ...svgo
-            //   ]
-            // }
+            svgo: {
+              plugins: [
+                ...defaultPlugins,
+                ...svgo
+              ]
+            }
           });
       } else {
         svgRule
